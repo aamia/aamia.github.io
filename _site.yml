@@ -3,8 +3,8 @@ output_dir: "."
 navbar:
   title: "Aamia Malik"
   left:
-    - text: "Index"
-      href: Index.html
+    - text: "index"
+      href: index.html
     - text: "Project"
       href: Project.html
     - text: "About"
