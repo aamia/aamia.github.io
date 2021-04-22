@@ -10,7 +10,6 @@ navbar:
     - text: "Project"
       href: project.html
    
-
 output:
   html_document:
     theme: darkly
