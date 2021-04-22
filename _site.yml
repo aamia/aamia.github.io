@@ -12,5 +12,5 @@ navbar:
 
 output:
   html_document:
-    theme: metadata
+    theme: darkly
     highlight: textmate
