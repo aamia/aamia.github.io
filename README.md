@@ -1,4 +1,4 @@
 # aamia.github.io
 Aamia Website
 
-Tryign this again 
+Trying this again 
