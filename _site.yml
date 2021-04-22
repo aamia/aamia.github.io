@@ -1,14 +1,15 @@
 name: "Aamia Malik's Website"
 output_dir: "."
 navbar:
-  title: "Aamia Malik."
+  title: "Aamia Malik"
   left:
-    - text: "index"
-      href: index.html
-    - text: "project"
-      href: project.html
-    - text: "about"
+    - text: "About"
       href: about.html
+    - text: "Index"
+      href: index.html
+    - text: "Project"
+      href: project.html
+   
 
 output:
   html_document:
