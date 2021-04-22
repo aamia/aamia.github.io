@@ -4,8 +4,6 @@ navbar:
   title: "Aamia Malik"
   left:
     - text: "About"
-      href: about.html
-    - text: "Index"
       href: index.html
     - text: "Project"
       href: project.html
