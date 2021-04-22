@@ -1,0 +1,16 @@
+name: "Aamia Malik's Website"
+output_dir: "."
+navbar:
+  title: "Aamia Malik"
+  left:
+    - text: "Home"
+      href: Home.html
+    - text: "Project"
+      href: Project.html
+    - text: "About"
+      href: About.html
+
+output:
+  html_document:
+    theme: simplex
+    highlight: textmate
