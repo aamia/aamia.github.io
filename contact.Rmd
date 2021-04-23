@@ -1,0 +1,14 @@
+---
+title: "Contact"
+output: html_document
+---
+
+Email: aamiamalik@gmail.com
+
+Twitter: <a href="https://twitter.com/aamia_m">@aamiam</a>
+
+Linkedin: https://www.linkedin.com/in/aamia-malik-a30129b0/
+
+
+
+

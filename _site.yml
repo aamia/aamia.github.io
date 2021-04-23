@@ -5,10 +5,20 @@ navbar:
   left:
     - text: "About"
       href: index.html
-    - text: "Project"
-      href: project.html
+    
+    - text: "Recent Projects"
+      menu:
+      - text: "Encouraging Clinical Trial Participation"
+      - href: 608.html 
+      - text: "Gender Based Wage Disparity in City Employees"
+      - href: wage.html 
+      - text: "HW9"
+      - href: HW9.html
+      
+    - text: "Contact"
+      href: contact.html
    
 output:
   html_document:
-    theme: darkly
+    theme: cosmo
     highlight: textmate

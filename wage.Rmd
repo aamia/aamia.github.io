@@ -1,0 +1,9 @@
+---
+title: "Gender Based Wage Disparity in City Employees"
+output: html_document
+---
+
+Description about this project is still to be added 
+
+<embed src="Malik Wage Disparity.pdf" width="750" height="800" 
+ type="application/pdf">
