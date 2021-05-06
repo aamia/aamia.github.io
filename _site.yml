@@ -9,6 +9,9 @@ navbar:
     - text: "Homework 9"
       href: HW09.html
       
+    - text: "Homework 10"
+      href: HW10.html
+      
     
     - text: "Contact"
       href: contact.html
