@@ -6,13 +6,18 @@ navbar:
     - text: "About"
       href: index.html
       
-    - text: "Homework 9"
-      href: HW09.html
+    - text: "Past Projects"
+      menu: 
+
+      - text: "Cook vs. Musk Tweets"
+        href: HW09.html
       
-    - text: "Homework 10"
-      href: HW10.html
+      - text: "Peer Network Analysis"
+        href: HW10.html
       
-    
+      - text: "Longitudinal Preferences: Alcohol and Tobacco in the U.S."
+        href: Long_Preferences.html
+      
     - text: "Contact"
       href: contact.html
    

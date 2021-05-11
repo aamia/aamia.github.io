@@ -1,9 +1,12 @@
 ---
-title: "Homework 9"
-author: "Electric Eels: Walid Hedidar, Aamia Malik, Michael Murphy, Jon Sirota, Cory Winkler, Jen Xue"
-date: "Apr/25/2021"
+title: "Cook vs. Musk Tweets"
+author: "Walid Hedidar, Aamia Malik, Michael Murphy, Jon Sirota, Cory Winkler, Jen Xue"
+date: "Apr 25 2021"
 output: html_document
 ---
+
+__Note: This report was assembled as part of data science coursework at the University of Pennsylvania under supervision of Dr. Alex Shpenev.__
+
 
 ## In this report, we analyze Elon Musk's and Tim Cook's tweets.
 

@@ -1,0 +1,10 @@
+---
+title: "Longitudinal Preferences: Alcohol and Tobacco in the U.S."
+date: "May 11 2021"
+output: html_document
+---
+
+The following dashboard was assembled as part of a team final project in a data science course at the University of Pennsylvania. Our team was interested in identifying and analyzing alcohol trends over time in the United States. All analyses were conducted using the statistical programming language R. 
+
+<a href="https://xuejennifer.github.io/dashboard-alcohol-tobacco/">LINK TO DASHBOARD</a>
+

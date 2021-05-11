@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Electric Eels: Walid Hedidar, Aamia Malik, Michael Murphy, Jon Sirota, Cory Winkler, Jen Xue" />
+<meta name="author" content="Walid Hedidar, Aamia Malik, Michael Murphy, Jon Sirota, Cory Winkler, Jen Xue" />
 
 
-<title>Homework 9</title>
+<title>Cook vs. Musk Tweets</title>
 
 <script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -286,11 +286,23 @@ $(document).ready(function () {
         <li>
   <a href="index.html">About</a>
 </li>
-<li>
-  <a href="HW09.html">Homework 9</a>
-</li>
-<li>
-  <a href="HW10.html">Homework 10</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Past Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="HW09.html">Cook vs. Musk Tweets</a>
+    </li>
+    <li>
+      <a href="HW10.html">Peer Network Analysis</a>
+    </li>
+    <li>
+      <a href="Long_Preferences.html">Longitudinal Preferences: Alcohol and Tobacco in the U.S.</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="contact.html">Contact</a>
@@ -307,13 +319,14 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Homework 9</h1>
-<h4 class="author">Electric Eels: Walid Hedidar, Aamia Malik, Michael Murphy, Jon Sirota, Cory Winkler, Jen Xue</h4>
-<h4 class="date">Apr/25/2021</h4>
+<h1 class="title toc-ignore">Cook vs. Musk Tweets</h1>
+<h4 class="author">Walid Hedidar, Aamia Malik, Michael Murphy, Jon Sirota, Cory Winkler, Jen Xue</h4>
+<h4 class="date">Apr 25 2021</h4>
 
 </div>
 
 
+<p><strong>Note: This report was assembled as part of data science coursework at the University of Pennsylvania under supervision of Dr. Alex Shpenev.</strong></p>
 <div id="in-this-report-we-analyze-elon-musks-and-tim-cooks-tweets." class="section level2">
 <h2>In this report, we analyze Elon Musk’s and Tim Cook’s tweets.</h2>
 <h2>
@@ -349,7 +362,7 @@ setwd(&#39;~/Dropbox/516_Eels/HW_9&#39;)
 
 elon = read_csv(&#39;elonmusk_tweets.csv&#39;)</code></pre>
 <pre><code>## 
-## ── Column specification ──────────────────────────────────────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
 ##   id = col_double(),
 ##   source = col_character(),
@@ -362,7 +375,7 @@ elon = read_csv(&#39;elonmusk_tweets.csv&#39;)</code></pre>
 
 cook = read_csv(&#39;tim_cook_tweets.csv&#39;)</code></pre>
 <pre><code>## 
-## ── Column specification ──────────────────────────────────────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
 ##   id = col_double(),
 ##   source = col_character(),
@@ -525,27 +538,30 @@ predictingtree &lt;- predictingtree %&gt;%
 <pre><code>## Joining, by = &quot;word&quot;</code></pre>
 <pre class="r"><code>predictingtree</code></pre>
 <pre><code>## # A tibble: 3,835 x 11
-##         id source    created_at          favorite_count retweet_count user  picture   pic_binary  hour
-##      &lt;dbl&gt; &lt;chr&gt;     &lt;dttm&gt;                       &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;          &lt;dbl&gt; &lt;int&gt;
-##  1 1.38e18 Twitter … 2021-04-11 15:48:58          71696          1528 Elon  No pictu…          0    15
-##  2 1.38e18 Twitter … 2021-04-11 15:48:58          71696          1528 Elon  No pictu…          0    15
-##  3 1.38e18 Twitter … 2021-04-11 14:49:38           1394            48 Elon  No pictu…          0    14
-##  4 1.38e18 Twitter … 2021-04-10 23:56:43           2542            65 Elon  No pictu…          0    23
-##  5 1.38e18 Twitter … 2021-04-10 23:54:51           2631           202 Elon  No pictu…          0    23
-##  6 1.38e18 Twitter … 2021-04-10 19:49:26           4606           154 Elon  No pictu…          0    19
-##  7 1.38e18 Twitter … 2021-04-10 19:46:36           8486           221 Elon  No pictu…          0    19
-##  8 1.38e18 Twitter … 2021-04-10 08:32:35           2313           114 Elon  No pictu…          0     8
-##  9 1.38e18 Twitter … 2021-04-10 08:23:03           3302           262 Elon  No pictu…          0     8
-## 10 1.38e18 Twitter … 2021-04-10 08:23:03           3302           262 Elon  No pictu…          0     8
-## # … with 3,825 more rows, and 2 more variables: word &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
+##         id source created_at          favorite_count retweet_count user  picture
+##      &lt;dbl&gt; &lt;chr&gt;  &lt;dttm&gt;                       &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  
+##  1 1.38e18 Twitt… 2021-04-11 15:48:58          71696          1528 Elon  No pic…
+##  2 1.38e18 Twitt… 2021-04-11 15:48:58          71696          1528 Elon  No pic…
+##  3 1.38e18 Twitt… 2021-04-11 14:49:38           1394            48 Elon  No pic…
+##  4 1.38e18 Twitt… 2021-04-10 23:56:43           2542            65 Elon  No pic…
+##  5 1.38e18 Twitt… 2021-04-10 23:54:51           2631           202 Elon  No pic…
+##  6 1.38e18 Twitt… 2021-04-10 19:49:26           4606           154 Elon  No pic…
+##  7 1.38e18 Twitt… 2021-04-10 19:46:36           8486           221 Elon  No pic…
+##  8 1.38e18 Twitt… 2021-04-10 08:32:35           2313           114 Elon  No pic…
+##  9 1.38e18 Twitt… 2021-04-10 08:23:03           3302           262 Elon  No pic…
+## 10 1.38e18 Twitt… 2021-04-10 08:23:03           3302           262 Elon  No pic…
+## # … with 3,825 more rows, and 4 more variables: pic_binary &lt;dbl&gt;, hour &lt;int&gt;,
+## #   word &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
 <pre class="r"><code>#amazing wordcloud
 predictingtree %&gt;%
   anti_join(stop_words) %&gt;%
   count(word) %&gt;%
   with(wordcloud(word, n, max.words = 100))</code></pre>
 <pre><code>## Joining, by = &quot;word&quot;</code></pre>
-<pre><code>## Warning in wordcloud(word, n, max.words = 100): congratulations could not be fit on page. It will not
-## be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(word, n, max.words = 100): congratulations could not be fit
+## on page. It will not be plotted.</code></pre>
+<pre><code>## Warning in wordcloud(word, n, max.words = 100): proud could not be fit on page.
+## It will not be plotted.</code></pre>
 <p><img src="HW09_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <div id="we-split-our-data-into-train-data-tree_train-and-test-data-for-later-use-tree_test.-then-we-generate-a-decision-tree-first-using-tree_train." class="section level4">
 <h4>We split our data into train data, <code>tree_train</code>, and test data for later use, <code>tree_test</code>. Then, we generate a decision tree, first using <code>tree_train</code>.</h4>
@@ -612,7 +628,7 @@ confusionMatrix(as.factor(tree_test$user), as.factor(tweet_predict))</code></pre
 
 rogan = read_csv(&#39;joerogan_tweets.csv&#39;)</code></pre>
 <pre><code>## 
-## ── Column specification ──────────────────────────────────────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
 ##   id = col_double(),
 ##   source = col_character(),
@@ -625,7 +641,7 @@ rogan = read_csv(&#39;joerogan_tweets.csv&#39;)</code></pre>
 
 siwa = read_csv(&#39;itsjojosiwa_tweets.csv&#39;)</code></pre>
 <pre><code>## 
-## ── Column specification ──────────────────────────────────────────────────────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## cols(
 ##   id = col_double(),
 ##   source = col_character(),
@@ -663,19 +679,20 @@ other_tree &lt;- other_tree %&gt;%
 <pre><code>## Joining, by = &quot;word&quot;</code></pre>
 <pre class="r"><code>other_tree</code></pre>
 <pre><code>## # A tibble: 4,276 x 11
-##         id source   created_at          favorite_count retweet_count user  picture    pic_binary  hour
-##      &lt;dbl&gt; &lt;chr&gt;    &lt;dttm&gt;                       &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           &lt;dbl&gt; &lt;int&gt;
-##  1 1.38e18 Instagr… 2021-04-17 01:35:41            997            52 Joe   Picture/l…          1     1
-##  2 1.38e18 Instagr… 2021-04-07 19:24:58           1542            87 Joe   Picture/l…          1    19
-##  3 1.38e18 Instagr… 2021-04-07 19:24:58           1542            87 Joe   Picture/l…          1    19
-##  4 1.38e18 Instagr… 2021-04-07 19:24:58           1542            87 Joe   Picture/l…          1    19
-##  5 1.37e18 Instagr… 2021-03-19 19:09:01            974            60 Joe   Picture/l…          1    19
-##  6 1.37e18 Instagr… 2021-03-19 19:09:01            974            60 Joe   Picture/l…          1    19
-##  7 1.37e18 Instagr… 2021-03-17 21:35:28            935            49 Joe   Picture/l…          1    21
-##  8 1.37e18 Instagr… 2021-03-17 21:35:28            935            49 Joe   Picture/l…          1    21
-##  9 1.37e18 Instagr… 2021-03-16 22:49:07            911            54 Joe   Picture/l…          1    22
-## 10 1.37e18 Instagr… 2021-03-16 22:49:07            911            54 Joe   Picture/l…          1    22
-## # … with 4,266 more rows, and 2 more variables: word &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
+##         id source created_at          favorite_count retweet_count user  picture
+##      &lt;dbl&gt; &lt;chr&gt;  &lt;dttm&gt;                       &lt;dbl&gt;         &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  
+##  1 1.38e18 Insta… 2021-04-17 01:35:41            997            52 Joe   Pictur…
+##  2 1.38e18 Insta… 2021-04-07 19:24:58           1542            87 Joe   Pictur…
+##  3 1.38e18 Insta… 2021-04-07 19:24:58           1542            87 Joe   Pictur…
+##  4 1.38e18 Insta… 2021-04-07 19:24:58           1542            87 Joe   Pictur…
+##  5 1.37e18 Insta… 2021-03-19 19:09:01            974            60 Joe   Pictur…
+##  6 1.37e18 Insta… 2021-03-19 19:09:01            974            60 Joe   Pictur…
+##  7 1.37e18 Insta… 2021-03-17 21:35:28            935            49 Joe   Pictur…
+##  8 1.37e18 Insta… 2021-03-17 21:35:28            935            49 Joe   Pictur…
+##  9 1.37e18 Insta… 2021-03-16 22:49:07            911            54 Joe   Pictur…
+## 10 1.37e18 Insta… 2021-03-16 22:49:07            911            54 Joe   Pictur…
+## # … with 4,266 more rows, and 4 more variables: pic_binary &lt;dbl&gt;, hour &lt;int&gt;,
+## #   word &lt;chr&gt;, value &lt;dbl&gt;</code></pre>
 <pre class="r"><code>#incredible wordcloud
 other_tree %&gt;%
   anti_join(stop_words) %&gt;%
