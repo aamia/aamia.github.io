@@ -4,7 +4,7 @@ output: html_document
 ---
 
 <p align="center">
-  <img width="300" src="Malik Headshot.png">
+  <img width="300" src="Malik Headshot.jpeg">
 </p>
 
 Originally from Northern California, Aamia Malik is a graduate student at the University of Pennsylvania studying Behavioral and Decision Sciences. She is interested in creative, evidence based strategies to solve real world problems and encourage optimal behavior. Her professional work experience includes time in the financial sector, academic research, policy, and municipal government. She holds a BA in Economics, with minors in Asian Studies and Psychology, from Swarthmore College. 
